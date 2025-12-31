@@ -1,0 +1,33 @@
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: final-project
+    version: 1.0.0
+  profiles:
+    active: dev   # dev, prod ?? ??
+  servlet:
+    multipart:
+      maxFileSize: 100MB # ?? ??? ?? ??
+      maxRequestSize: 300MB  # ? ?? ?? ??? ?? ??
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      # create, create-drop, update, validate, none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQL8Dialect  # MySQL8 ??
+        physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        jdbc.time_zone: UTC
+    open-in-view: false
